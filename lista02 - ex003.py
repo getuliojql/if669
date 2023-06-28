@@ -1,3 +1,63 @@
+'''
+#início
+estoque = 20
+controle = 1
+#morreu = 0
+
+#frases
+acabou = 'Acabou uma partida e precisamos da seguinte quantidade de garrafas para matar a sede dos jogadores'
+encham = 'Encham o cooler! O jogo vai começar!!!!'
+timeout = 'Timeout da partida! Verifiquem quantas garrafas pediram aos voluntários'
+intercin = 'O InterCIn acabou!!! Vamos verificar nosso estoque de bebidas'
+
+#começando
+while controle != 0:
+  frase = str(input())
+  if frase == acabou:
+      sedentos = int(input())
+      if estoque >= sedentos:
+          estoque -= sedentos
+      else:
+          print(f'Não teremos água para todos os jogadores... Temos que garantir {sedentos - estoque} garrafas!!')
+          estoque += estoque
+          if estoque >= sedentos:
+            estoque -= sedentos
+          else:
+            print('Por questões logísticas, teremos que acabar com os jogos...')
+            controle = 0
+            #morreu = 1
+  if frase == encham:
+    estoque += 15
+    print('Geladeira cheia!')
+  if frase == timeout:
+      vol_1 = int(input())
+      vol_2 = int(input())
+      vol_3 = int(input())
+      vol_4 = int(input())
+      vol_5 = int(input())
+      soma_vol = vol_1 + vol_2 + vol_3 + vol_4 + vol_5
+      estoque -= soma_vol
+      if estoque < 0:
+        estoque *= -1
+        print(f'Faltaram {estoque} garrafas para atender o pedido feito aos voluntários')
+        estoque *= -1
+        print('Por questões logísticas, teremos que acabar com os jogos...')
+  if frase == intercin:
+    controle = 0
+  if estoque < 0:
+      print('Por questões logísticas, teremos que acabar com os jogos...')
+      controle = 0
+#final
+#if morreu == 0:
+if estoque > 0:
+    print(f'Sobraram {estoque} garrafas, vamos guardar na geladeira :D')
+elif estoque == 0:
+    print('Vendemos todas as garrafas! Nosso planejamento foi perfeito!')
+else:
+  estoque *= -1
+  print(f'Estamos devendo {estoque} garrafas para os alunos...')
+'''
+
 estoque = 20
 controle = 1
 
