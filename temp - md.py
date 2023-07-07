@@ -16,7 +16,3 @@ print(f'Notas menores: {z}')
 x = int(input())
 print((2 * abs((x ** 2))) - x)
 '''
-qtd_criaturas = int(input())
-lista_criaturas = []
-for i in range(qtd_criaturas):
- lista_criaturas.append(str(input()))
