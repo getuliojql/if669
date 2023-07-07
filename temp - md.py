@@ -16,24 +16,7 @@ print(f'Notas menores: {z}')
 x = int(input())
 print((2 * abs((x ** 2))) - x)
 '''
-#listas
-
-produtos_vendidos = ['cpu', 'gpu', 'fonte', 'cooler']
-produtos_estoque = ['cpu', 'cpu', 'cpu', 'gpu', 'gpu', 'fonte', 'fonte', 'fonte', 'fonte', 'cooler']
-
-produto_consultado = str(input('Digite o produto que deseja consultar: '))
-estoque_consultado = 0
-
-vendido = False
-
-for produto in produtos_vendidos:
-    if produto_consultado == produto:
-        vendido = True
-
-if vendido:
-    for produto in produtos_estoque:
-        if produto_consultado == produto:
-            estoque_consultado += 1
-    print(f'Nossa loja vende {produto_consultado} sim! Atualmente temos {estoque_consultado} {produto_consultado}(s) em loja...')
-else:
-    print(f'Infelizmente nós não vendemos {produto_consultado} :(')
+qtd_criaturas = int(input())
+lista_criaturas = []
+for i in range(qtd_criaturas):
+ lista_criaturas.append(str(input()))
