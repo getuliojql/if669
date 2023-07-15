@@ -66,6 +66,8 @@ while barbie_continuar:
         # caso ela esteja usando a camisa da seleção
         if opcao_escolhida_top == 'camisa da seleção':
             print('Essa Barbie vai torcer pela seleção feminina na copa do mundo 2023!')
+
+        # caso não esteja
         else:
             print('Essa Barbie vai arrasar com o look perfeito!')
 

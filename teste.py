@@ -1,3 +1,64 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''while not achou and not acabou:
+    for idx_numero, numero in enumerate(minutos):
+        if int(numero) + somatorio < qtd_ideal_minutos:
+            somatorio += int(numero)
+
+        elif int(numero) + somatorio == qtd_ideal_minutos:
+            somatorio += int(numero)
+            achou = True
+
+        if not achou:
+            if len(minutos) > 0:
+                minutos.pop(0)
+            else:
+                acabou = True
+
+if achou:
+    print('Conquistamos nossa primeira estrela!')
+
+elif acabou:
+    print('Não treinamos na dose certa e infelizmente a estrela vai ter que ficar para a próxima')
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
 # recebendo as opções de cada seção do look e definindo o meio
 penteado = str(input()).split(' - ')
 opcao_meio_penteado = penteado[(len(penteado) // 2)]
