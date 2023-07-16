@@ -40,6 +40,26 @@ acabou = False
 # início da jornada
 while not acabou:
 
+    # aqui vai o movimento do cambista
+    print('chibata')
+
+    # recebendo o movimento da pessoa e executando-o
+    movimento = str(input())
+
+    if movimento == 'cima':
+        print()
+    elif movimento == 'baixo':
+        print()
+    elif movimento == 'esquerda':
+        if cinema[voce_y].index('V') > 0:
+            cinema[voce_y].pop(cinema[voce_y].index('V') - 1)
+            cinema[voce_y].insert(cinema[voce_y].index('V') + 1, '-')
+
+    elif movimento == 'direita':
+        if cinema[voce_y].index('V') < 7:
+            cinema[voce_y].insert(cinema[voce_y].index('V'), '-')
+            cinema[voce_y].pop(cinema[voce_y].index('V') + 1)
+
     # imprimindo a situação do "cinema" após as movimentações
     for fileira in cinema:
         for idx_posicao, posicao in enumerate(fileira):
