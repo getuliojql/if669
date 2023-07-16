@@ -58,6 +58,18 @@ while not acabou:
             cinema[cambista_y].insert(cambista_x, '-')
             cinema[cambista_y].remove('C')
             cambista_y += 1
+    # movimentando-o para esquerda
+    elif cambista_x > voce_x:
+        if cinema[cambista_y].index('C') > 0:
+            cinema[cambista_y].pop(cinema[cambista_y].index('C') - 1)
+            cinema[cambista_y].insert(cinema[cambista_y].index('C') + 1, '-')
+            cambista_x -= 1
+    # movimentando-o para direita
+    elif cambista_x < voce_x:
+        if cinema[cambista_y].index('C') < 7:
+            cinema[cambista_y].insert(cinema[cambista_y].index('C'), '-')
+            cinema[cambista_y].pop(cinema[cambista_y].index('C') + 1)
+            cambista_x += 1
 
     # recebendo o movimento da pessoa e executando-o
     movimento = str(input())
