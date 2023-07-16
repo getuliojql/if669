@@ -40,25 +40,54 @@ acabou = False
 # início da jornada
 while not acabou:
 
-    # aqui vai o movimento do cambista
-    print('chibata')
+    # se o cambista estiver na mesma coluna
+    if cambista_x == voce_x:
+
+        # movimentando-o para cima
+        if cambista_y > voce_y:
+            cinema[cambista_y - 1].pop(cambista_x)
+            cinema[cambista_y - 1].insert(cambista_x, 'C')
+            cinema[cambista_y].insert(cambista_x, '-')
+            cinema[cambista_y].remove('C')
+            cambista_y -= 1
+
+        # movimentando-o para baixo
+        elif cambista_y < voce_y:
+            cinema[cambista_y + 1].pop(cambista_x)
+            cinema[cambista_y + 1].insert(cambista_x, 'C')
+            cinema[cambista_y].insert(cambista_x, '-')
+            cinema[cambista_y].remove('C')
+            cambista_y += 1
 
     # recebendo o movimento da pessoa e executando-o
     movimento = str(input())
 
     if movimento == 'cima':
-        print()
+        if voce_y > 0:
+            cinema[voce_y - 1].pop(voce_x)
+            cinema[voce_y - 1].insert(voce_x, 'V')
+            cinema[voce_y].insert(voce_x, '-')
+            cinema[voce_y].remove('V')
+            voce_y -= 1
+
     elif movimento == 'baixo':
-        print()
+        if voce_y < 7:
+            cinema[voce_y + 1].pop(voce_x)
+            cinema[voce_y + 1].insert(voce_x, 'V')
+            cinema[voce_y].insert(voce_x, '-')
+            cinema[voce_y].remove('V')
+            voce_y += 1
     elif movimento == 'esquerda':
         if cinema[voce_y].index('V') > 0:
             cinema[voce_y].pop(cinema[voce_y].index('V') - 1)
             cinema[voce_y].insert(cinema[voce_y].index('V') + 1, '-')
+            voce_x -= 1
 
     elif movimento == 'direita':
         if cinema[voce_y].index('V') < 7:
             cinema[voce_y].insert(cinema[voce_y].index('V'), '-')
             cinema[voce_y].pop(cinema[voce_y].index('V') + 1)
+            voce_x += 1
 
     # imprimindo a situação do "cinema" após as movimentações
     for fileira in cinema:

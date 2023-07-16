@@ -1,4 +1,7 @@
-
+'''     cinema[voce_y].remove('V')
+        cinema[voce_y].append('-')
+        cinema[voce_y - 1].insert(voce_x, 'V')
+        voce_y -= 1'''
 
 
 
