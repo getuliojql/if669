@@ -1,5 +1,6 @@
 
-
+frase = 'felipe  , fa  z amor comigo    '
+print(frase.replace(' ', ''))
 
 
 
