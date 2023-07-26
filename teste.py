@@ -1,6 +1,6 @@
-
-frase = 'felipe  , fa  z amor comigo    '
-print(frase.replace(' ', ''))
+pilha = [0, 1, 2]
+pilha.insert(-1, 3)
+print(pilha)
 
 
 
