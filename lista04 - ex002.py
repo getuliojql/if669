@@ -21,7 +21,7 @@ while not acabou:
 
     if proximo:
         leitor = str(input())
-        if leitor == 'FIM' and explodiu:
+        if leitor == 'FIM':
             situacao = 'FIM'
             explodiu = False
             explodiu_final = True

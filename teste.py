@@ -1,7 +1,10 @@
-pilha = [0, 1, 2]
-pilha.insert(-1, 3)
+pilha = [0, 14]
+print(pilha[-1])
+pilha.pop(-1)
+pilha.insert(-1, 4)
+print(pilha[-1])
+pilha.pop(-1)
 print(pilha)
-
 
 
 
