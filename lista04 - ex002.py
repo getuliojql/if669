@@ -26,7 +26,6 @@ while not acabou:
             explodiu = False
             explodiu_final = True
 
-        # if proximo and not explodiu_final:
         else:
             informacoes_participante = leitor.split(' ')
             informacoes_participante[1] = int(informacoes_participante[1])
