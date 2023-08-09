@@ -39,4 +39,4 @@ if casas == 0:
     print('Link Salve Hyrule!!!')
 
 else:
-    print('A ultima defesa de Hyrule caiu, nao sobrou ninguem capaz de se opor a Ganondorf')
+    print('A ultima defesa de hyrule caiu, nao sobrou ninguem capaz de se opor a Ganondorf')
