@@ -1,17 +1,17 @@
-velocidade_maxima_curva = int(input('velocidade: '))
-tempo = str(input('tempo: '))
+velocidade_maxima = int(input())
+tempo = str(input())
 
-if velocidade_maxima_curva <= 260:
-    print('mônaco')
+if velocidade_maxima <= 260:
+    print('Nesse dia, Senna corria em Mônaco, onde esteve no pódio 8 vezes!')
 
-elif 260 < velocidade_maxima_curva <= 285:
+elif 260 < velocidade_maxima <= 285:
     if tempo == 'neblina':
-        print('mônaco')
+        print('Nesse dia, Senna corria em Mônaco, onde esteve no pódio 8 vezes!')
     else:
-        print('ímola')
+        print('Senna corria em Ímola, onde infelizmente fez sua última corrida.')
 
 else:
     if tempo == 'neblina':
-        print('ímola')
+        print('Senna corria em Ímola, onde infelizmente fez sua última corrida.')
     else:
-        print('spa-francorchamps')
+        print('Claramente Spa-Francorchamps, circuito no qual Senna venceu histórico duelo com Prost depois de três largadas!')
