@@ -35,24 +35,23 @@ desordem = False
 numero_rodadas = int(input())
 
 for rodada in range(numero_rodadas):
-    if vitorias_kanye < 3 and vitorias_taylor < 3 and not desordem:
+    if not desordem and vitorias_kanye < 3 and vitorias_taylor < 3:
         print(f'{rodada + 1}° RODADA:')
 
         pontuacao_kanye = 0
         pontuacao_taylor = 0
 
-        if not desordem:
-            musica_kanye = str(input())
+        musica_kanye = str(input())
 
-            for _ in range(3):
-                avaliacao_kanye = str(input())
-                pontuacao_atual_kanye, desordem_atual_kanye = pontuar(avaliacao_kanye)
-                pontuacao_kanye += pontuacao_atual_kanye
-                desordem_kanye += desordem_atual_kanye
+        for _ in range(3):
+            avaliacao_kanye = str(input())
+            pontuacao_atual_kanye, desordem_atual_kanye = pontuar(avaliacao_kanye)
+            pontuacao_kanye += pontuacao_atual_kanye
+            desordem_kanye += desordem_atual_kanye
 
-            if desordem_kanye >= 5 and perdedor == '':
-                perdedor = 'Kanye West'
-                desordem = True
+        if desordem_kanye >= 5 and perdedor == '':
+            perdedor = 'Kanye West'
+            desordem = True
 
         if not desordem:
             musica_taylor = str(input())
