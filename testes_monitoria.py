@@ -1,169 +1,96 @@
-# artistas
-tay = "Taylor Swift"
-ye = "Kanye West"
+print("Bem-vindo(a) à 'Sergio Bieber's Disco Shop'!")
 
-# booleana
-descontentamento = False
-avaliacao = True
-taylor = True
-tudo = True
+artista_1 = input()
+artista_2 = input()
 
-# pontuação
-pontoskanye = 0
-pontostaylor = 0
-pontuacaodesordem = 0
-totaltaylor = 0
-totallkanye = 0
+print(f"E os artistas de hoje são {artista_1} e {artista_2}!")
 
-num_rodadas = int(input())
-# input das musicas e das avaliaçôes
+# Dicionários "disco-preço" para o artista 1 e o artista 2
+album_1 = {}
+album_2 = {}
 
-for rodada in range(1, num_rodadas + 1, 1):
-    print(f"{rodada}° RODADA:")
 
-    musica_kanye = input()
-    avaliacao_kanye1 = input()
-    if avaliacao_kanye1 == "boa":
-        pontoskanye += 2
-    elif avaliacao_kanye1 == "média":
-        pontoskanye += 1
-    elif avaliacao_kanye1 == "ruim":
-        pontoskanye -= 3
-    elif avaliacao_kanye1 == "péssima":
-        # desordem
-        descontentamento = True
-        while descontentamento == True:
-            random_frases = input()
-            pontuacaodesordem += 1
+stop = False # Parâmetro de entrada do loop para o artista 1 e 2
+while not stop:
+    disco = input()
+    if disco == "acabou":
+        stop = True
+    else:
+        preco = float(input())
 
-            if random_frases == 'ORDEM':
-                descontentamento = False
-                continue
-            if pontuacaodesordem == 5:
-                print(f'Os fãs do(a) {ye} causaram tanta desordem que ele(a) perdeu o prêmio!')
-                print(f'O(a) vencedor(a) do Cin Awards é {tay}, parabéns!')
-                descontentamento = False
-                taylor = False
-            continue
+        album_1[disco] = preco
+# !!! FAZER UMA FUNÇÃO PARA ESSES LOOPs
+stop = False
+while not stop:
+    disco = input()
+    if disco == "acabou":
+        stop = True
+    else:
+        preco = float(input())
 
-    avaliacao_kanye2 = input()
-    if avaliacao_kanye2 == "boa":
-        pontoskanye += 2
-    elif avaliacao_kanye2 == "média":
-        pontoskanye += 1
-    elif avaliacao_kanye2 == "ruim":
-        pontoskanye -= 3
-    elif avaliacao_kanye2 == "péssima":
-        # desordem
-        descontentamento = True
-        while descontentamento == True:
-            random_frases = input()
-            pontuacaodesordem += 1
+        album_2[disco] = preco
 
-            if random_frases == 'ORDEM':
-                descontentamento = False
-            if pontuacaodesordem == 5:
-                print(f'Os fãs do(a) {ye} causaram tanta desordem que ele(a) perdeu o prêmio!')
-                print(f'O(a) vencedor(a) do Cin Awards é {tay}, parabéns!')
-                descontentamento = False
-                taylor = False
-            continue
+print("-----COMEÇO DO EXPEDIENTE!-----")
 
-    avaliacao_kanye3 = input()
-    if avaliacao_kanye3 == "boa":
-        pontoskanye += 2
-    elif avaliacao_kanye3 == "média":
-        pontoskanye += 1
-    elif avaliacao_kanye3 == "ruim":
-        pontoskanye -= 3
-    elif avaliacao_kanye3 == "péssima":
-        # desordem
-        descontentamento = True
-        while descontentamento == True:
-            random_frases = input()
-            pontuacaodesordem += 1
+# discos vendidos e receitas feitos pelo artista 1 e 2
+discos_vendidos_1 = 0
+discos_vendidos_2 = 0
+receita_1 = 0
+receita_2 = 0
 
-            if random_frases == 'ORDEM':
-                descontentamento = False
-            if pontuacaodesordem == 5:
-                print(f'Os fãs do(a) {ye} causaram tanta desordem que ele(a) perdeu o prêmio!')
-                print(f'O(a) vencedor(a) do Cin Awards é {tay}, parabéns!')
-                descontentamento = False
-                taylor = False
-            continue
+stop = False
+while not stop:
+    disco = input()
+    if disco == "FIM":
+        stop = True
+    else:
+        if disco in album_1 or disco in album_2:
+            print(f"{disco} vendido")
+            if disco in album_1:
+                discos_vendidos_1 += 1
+                receita_1 += album_1[disco]
+            else:
+                discos_vendidos_2 += 1
+                receita_2 += album_2[disco]
 
-    while taylor == True:
-        musica_taylor = input()
-        avaliacao_taylor1 = input()
-        if avaliacao_taylor1 == "boa":
-            pontostaylor += 2
-        elif avaliacao_taylor1 == "média":
-            pontostaylor += 1
-        elif avaliacao_taylor1 == "ruim":
-            pontostaylor -= 3
-        elif avaliacao_taylor1 == "péssima":
-            # desordem
-            descontentamento = True
-            while descontentamento == True:
-                random_frases = input()
-                pontuacaodesordem += 1
+            if discos_vendidos_1 > discos_vendidos_2 and (discos_vendidos_1 - discos_vendidos_2) % 3 == 0 and discos_vendidos_1 - discos_vendidos_2 !=0:
+                print(f"A diferença está ficando muito grande! AUMENTA R$4 DE {artista_1.upper()} E ABAIXA R$4 DE {artista_2.upper()}!")
 
-                if random_frases == 'ORDEM':
-                    descontentamento = False
-                if pontuacaodesordem == 5:
-                    print(f'Os fãs do(a) {tay} causaram tanta desordem que ele(a) perdeu o prêmio!')
-                    print(f'O(a) vencedor(a) do Cin Awards é {ye}, parabéns!')
-                    descontentamento = False
-                continue
-        avaliacao_taylor2 = input()
-        if avaliacao_taylor2 == "boa":
-            pontostaylor += 2
-        elif avaliacao_taylor2 == "média":
-            pontostaylor += 1
-        elif avaliacao_taylor2 == "ruim":
-            pontostaylor -= 3
-        elif avaliacao_taylor2 == "péssima":
-            # desordem
-            descontentamento = True
-            while descontentamento:
-                random_frases = input()
-                pontuacaodesordem += 1
+                for i in album_1:
+                    album_1[i] += 4
+                for j in album_2:
+                    if album_2[j] > 3:
+                        album_2[j] -= 4
+                    else:
+                        album_2[j] = 1
+            elif discos_vendidos_2 > discos_vendidos_1 and (discos_vendidos_2 - discos_vendidos_1) % 3 == 0 and discos_vendidos_1 - discos_vendidos_2 != 0:
+                print(f"A diferença está ficando muito grande! AUMENTA R$4 DE {artista_2.upper()} E ABAIXA R$4 DE {artista_1.upper()}!")
 
-                if random_frases == 'ORDEM':
-                    descontentamento = False
-                if pontuacaodesordem == 5:
-                    print(f'Os fãs do(a) {tay} causaram tanta desordem que ele(a) perdeu o prêmio!')
-                    print(f'O(a) vencedor(a) do Cin Awards é {ye}, parabéns!')
-                    descontentamento = False
-                continue
-        avaliacao_taylor3 = input()
-        taylor = False
-        if avaliacao_taylor3 == "boa":
-            pontostaylor += 2
-        elif avaliacao_taylor3 == "média":
-            pontostaylor += 1
-        elif avaliacao_taylor3 == "ruim":
-            pontostaylor -= 3
-        elif avaliacao_taylor3 == "péssima":
-            # desordem
-            descontentamento = True
-            while descontentamento:
-                random_frases = input()
-                pontuacaodesordem += 1
+                for i in album_2:
+                    album_2[i] += 4
+                for j in album_1:
+                    if album_1[j] > 3:
+                        album_1[j] -= 4
+                    else:
+                        album_1[j] = 1
+        else:
+            print("Parece que não temos esse disco...")
 
-                if random_frases == 'ORDEM':
-                    descontentamento = False
-                if pontuacaodesordem == 5:
-                    print(f'Os fãs do(a) {tay} causaram tanta desordem que ele(a) perdeu o prêmio!')
-                    print(f'O(a) vencedor(a) do Cin Awards é {ye}, parabéns!')
-                    descontentamento = False
-                continue
-        # pontuação total da rodada
-        if pontoskanye > pontostaylor:
-            print(f'O(a) vencedor(a) da {rodada}° rodada foi {ye}')
-            totallkanye += 1
-        elif pontostaylor > pontoskanye:
-            print(f'O(a) vencedor(a) da {rodada}° rodada foi {tay}')
-            totaltaylor += 1
-        elif pontoskanye == pontostaylor:
-            print(f"Não houve vencedor na {rodada}° rodada")
+print("-----FIM DO EXPEDIENTE!-----")
+
+discos_vendidos_total = discos_vendidos_1 + discos_vendidos_2
+receita_total = receita_1 + receita_2
+
+if receita_total == 0:
+    print(f"O total de receita gerado foi de {receita_total} e foram vendidos {discos_vendidos_total} discos.")
+else:
+    print(f"O total de receita gerado foi de {receita_total:.1f} e foram vendidos {discos_vendidos_total} discos.")
+
+if discos_vendidos_1 + discos_vendidos_2 == 0:
+    print("Que tristeza! Só artista péssimo...")
+elif receita_1 == receita_2:
+    print("Difícil de escolher o melhor!")
+elif receita_1 > receita_2:
+    print(f"O artista que mais gerou dinheiro para a loja foi {artista_1}, acumulando uma receita de {receita_1} e vendendo {discos_vendidos_1} discos.")
+elif receita_2 > receita_1:
+    print(f"O artista que mais gerou dinheiro para a loja foi {artista_2}, acumulando uma receita de {receita_2} e vendendo {discos_vendidos_2} discos.")
