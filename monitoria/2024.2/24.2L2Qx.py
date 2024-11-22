@@ -10,7 +10,7 @@ while musica != 'FIM' and tentativas < 3:
         if len(entrada) >= 15 and entrada.isalpha():
             contador += 1
             ultima_musica = musica
-            print(f'"{musica}" foi adicionada à playlist!')
+            print(f'{musica} foi adicionada à playlist!')
 
         elif entrada.isnumeric():
             contador = 0
@@ -20,7 +20,7 @@ while musica != 'FIM' and tentativas < 3:
                 print('ABORTAR! OS VILÕES OBTIVERAM ACESSO, TEREMOS QUE RECOMEÇAR.\nPLAYLIST DO PAPAI NOEL')
 
         else:
-            print(f'"{musica}" não pôde ser adicionada à playlist! A última música adicionada foi "{ultima_musica}".')
+            print(f'{musica} não pôde ser adicionada à playlist! A última música adicionada foi {ultima_musica}.')
 
 if tentativas == 3:
     print('NAAÃO! Já está na hora do Papai Noel sair e não conseguimos construir sua playlist perfeita.')
