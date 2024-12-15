@@ -9,19 +9,19 @@ Alunos: Felipe Costa Coutinho            [1]
 * nas listas de numeração ímpar, escrever [3, 4, 5] e revisar [1, 2]
 ''''''
 FEEDBACK 1:
-[1] - ...
-[2] - ...
+[1] - ✅
+[2] - ✅
 
-[3] - em andamento
-[4] - em andamento
-[5] - em andamento
+[3] - ✅
+[4] - ⛔
+[5] - ✅
 ''''''
 FEEDBACK 2:
 [1] -
 [2] -
 
 [3] - 
-[4] - 
+[4] ⛔
 [5] - 
 ''''''
 FEEDBACK 3:
@@ -29,7 +29,7 @@ FEEDBACK 3:
 [2] -
 
 [3] - 
-[4] - 
+[4] ⛔
 [5] - 
 ''''''
 FEEDBACK 4:
@@ -37,7 +37,7 @@ FEEDBACK 4:
 [2] -
 
 [3] - 
-[4] - 
+[4] ⛔
 [5] - 
 ''''''
 FEEDBACK 5:
@@ -45,7 +45,7 @@ FEEDBACK 5:
 [2] -
 
 [3] - 
-[4] - 
+[4] ⛔
 [5] - 
 ''''''
 FEEDBACK 6:
@@ -53,6 +53,6 @@ FEEDBACK 6:
 [2] -
 
 [3] - 
-[4] - 
+[4] ⛔
 [5] - 
 '''
