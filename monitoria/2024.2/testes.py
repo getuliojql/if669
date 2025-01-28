@@ -1,43 +1,53 @@
-nome_suspeito1 = str(input())
-distancia_suspeito1 = int(input())
-nome_suspeito2 = str(input())
-distancia_suspeito2 = int(input())
-distancia_entre_suspeitos = (distancia_suspeito1**2 + distancia_suspeito2**2)
-distancia_entre_suspeitos2 = distancia_entre_suspeitos ** 1/2
-distancia_entre_suspeitos = distancia_entre_suspeitos ** 0.5
-if distancia_entre_suspeitos % 2 == 0:
-    print(f"{nome_suspeito1} e {nome_suspeito2} são CÚMPLICES no crime! Se juntaram para confundir a polícia, mas os CIners são mais espertos! A Bola de Ouro será recuperada com sucesso!")
-else:
-    categoria_suspeito1 = str(input()).capitalize()
-    categoria_suspeito2 = str(input()).capitalize()
-    if categoria_suspeito1 == categoria_suspeito2 == "Fã":
-        if (distancia_suspeito1 % 6 == 0) and (distancia_suspeito2 % 6 == 0):
-            print(f"{nome_suspeito1} e {nome_suspeito2} são CÚMPLICES no crime! Se juntaram para confundir a polícia, mas os CIners são mais espertos! A Bola de Ouro será recuperada com sucesso!")
-        else:
-            if distancia_suspeito1 % 2 == 0:
-                print(f"{nome_suspeito2} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
-            elif distancia_suspeito2 % 3 == 0:
-                print(f"{nome_suspeito1} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
-    elif categoria_suspeito1 == categoria_suspeito2 == "Jogador":
-        if (distancia_suspeito1 % 10 == 0) and (distancia_suspeito2 % 10 == 0):
-            print(f"{nome_suspeito1} e {nome_suspeito2} são CÚMPLICES no crime! Se juntaram para confundir a polícia, mas os CIners são mais espertos! A Bola de Ouro será recuperada com sucesso!")
-        else:
-            if distancia_suspeito1 % 2 == 0:
-                print(f"{nome_suspeito2} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
-            elif distancia_suspeito2 % 5 == 0:
-                print(f"{nome_suspeito1} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
-    elif categoria_suspeito1 == categoria_suspeito2 == "Jornalista":
-        if (distancia_suspeito1 % 15 == 0) and (distancia_suspeito2 % 15 == 0):
-            print(f"{nome_suspeito1} e {nome_suspeito2} são CÚMPLICES no crime! Se juntaram para confundir a polícia, mas os CIners são mais espertos! A Bola de Ouro será recuperada com sucesso!")
-        else:
-            if distancia_suspeito1 % 3 == 0:
-                print(f"{nome_suspeito2} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
-            elif distancia_suspeito2 % 5 == 0:
-                print(f"{nome_suspeito1} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
+receber_entradas = True
+vilões = []
+
+while receber_entradas:
+    entrada = input()
+
+    if entrada == 'Novo vilão - Muito Perigoso':
+        vilão = input()
+        vilões = [vilão] + vilões
+    elif entrada == 'Novo vilão - Meio perigoso':
+        vilão = input()
+        vilões = vilões + [vilão]
+    elif entrada == 'O que ele está fazendo aqui?':
+        vilão_a_remover = input()
+        for vilão in vilões:
+            if vilão == vilão_a_remover:
+                vilões.remove(vilão)
+    elif entrada == 'Vilão mais perigoso do que pensávamos':
+        indice_atual = int(input())
+        indice_novo = int(input())
+        vilão_antigo = str()
+        vilão_antigo = vilões[indice_novo]
+        vilões[indice_novo] = vilões[indice_atual]
+        vilões[indice_atual] = vilão_antigo
+    elif entrada == 'Que estranho, esses dois vilões… troque-os de lugar':
+        vilão_1 = input()
+        vilão_2 = input()
+        index_vilão_1 = vilões.index(vilão_1)
+        index_vilão_2 = vilões.index(vilão_2)
+        vilões[index_vilão_1] = vilão_2
+        vilões[index_vilão_2] = vilão_1
+    elif entrada == 'Essa posição não está de acordo, ele nem odeia carecas':
+        vilão_a_mover = input()
+        for vilão in vilões:
+            if vilão == vilão_a_mover:
+                vilões.remove(vilão)
+        vilões = vilões + [vilão_a_mover]
+    elif entrada == 'Como a lista está ficando?':
+        for vilão in vilões:
+            if vilão == vilões[-1]:
+                print(vilão, end='')
+            else:
+                print(vilão + ', ', end='')
+    elif entrada == 'Já temos nossa lista de vilões':
+        receber_entradas = False
+
+print('O resultado final ficou assim:')
+
+for vilão in vilões:
+    if vilão == vilões[-1]:
+        print(vilão, end='')
     else:
-        if distancia_suspeito1 > distancia_suspeito2:
-            print(f"{nome_suspeito2} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
-        elif distancia_suspeito1 < distancia_suspeito2:
-            print(f"{nome_suspeito1} é o(a) CULPADO(A)! Ele(a) confessou a localização da Bola de Ouro e ela foi retornada com sucesso!")
-        else:
-            print(f"{nome_suspeito1} e {nome_suspeito2} são INOCENTES! A polícia parisiense não fez um bom trabalho... Vamos continuar procurando!")
+        print(vilão + ', ', end='')
